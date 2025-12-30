@@ -1,0 +1,17 @@
+.carousel {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  border-radius: 16px;
+  margin: 25px 0;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+}
+
+.carousel-img {
+
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  transition: opacity 0.8s ease-in-out;
+}
