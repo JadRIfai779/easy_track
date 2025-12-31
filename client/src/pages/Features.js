@@ -1,7 +1,7 @@
  function Features() {
   return (
     <div className="page">
-    <h1>Features🙌</h1>
+    <h1 className="color">Features🙌</h1>
    <div className="card-grid">
    <div className="card">
    <h3>Activity Tracking</h3>

@@ -1,21 +1,43 @@
 import express from "express"
-import mysql from "mysql"
+import mysql from "mysql2"
 import multer from "multer"
 import cors from "cors"
 import path from "path"
 import bcrypt from 'bcrypt'
 import { create } from "domain"
+import dotenv from 'dotenv'
+dotenv.config();
+console.log("MYSQLHOST:", process.env.MYSQLHOST);
+console.log("MYSQLUSER:", process.env.MYSQLUSER);
+console.log("MYSQLPASSWORD:", process.env.MYSQLPASSWORD === "" ? "(empty)" : "******");
+console.log("MYSQLDATABASE:", process.env.MYSQLDATABASE);
+console.log("MYSQLPORT:", process.env.MYSQLPORT);
 
 const app=express()
 app.use(cors());
 app.use(express.json())
 
-const db=mysql.createConnection({
-    host:"localhost",
-    user:"root",
-    password:"",
-    database:"easy_track"
+
+const db=mysql.createPool({
+    host:process.env.MYSQLHOST,
+    user:process.env.MYSQLUSER ,
+    password:process.env.MYSQLPASSWORD, 
+    database:process.env.MYSQLDATABASE,
+    port:process.env.MYSQLPORT,
+    ssl:false
+      
 })
+export default db
+
+db.getConnection((err, connection) => {
+  if (err) {
+    console.error("DB connection failed:", err);
+  } else {
+    console.log("Connected to Railway MySQL!");
+    connection.release();
+  }
+});
+
 
 
 //API to get all usernames in db
@@ -148,7 +170,7 @@ app.post('/workoutlogs',(req,res)=>{
         return res.status(201).json({message:"Workout log added successfully"});
     })
 })
-
-app.listen(5000,()=>{
-    console.log("connected to backend.")
+const PORT=process.env.PORT||5000;
+app.listen(PORT,()=>{
+    console.log(`connected to backend port ${PORT}`)
 });

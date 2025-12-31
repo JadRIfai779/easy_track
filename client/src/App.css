@@ -9,6 +9,12 @@ body {
   background: #f5f7fb;
   color: #222;
 }
+.color{
+  color: black;
+  font-weight: bold;
+  font-family:cursive;
+  font-size: 38px;
+}
 
 /* Layout */
 .page {
@@ -106,6 +112,9 @@ body {
 }
 .delete{
   color: rgb(255, 250, 250);
+}
+.delete:hover{
+ background:#dc2626;
 }
 .line{
   display: flex;

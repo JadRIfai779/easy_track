@@ -41,7 +41,7 @@ console.error(err)
   }
   return (
     <div className="page">
-      <h1>Daily Tracking👀</h1>
+      <h1 className="color">Daily Tracking👀</h1>
 
       <form className="form-grid" onSubmit={handleSubmit}>
         <div>

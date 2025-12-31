@@ -30,7 +30,7 @@ setFormData((prev)=>({
   return (
     <div className="page">
 
-    <h1>Contact Us📠</h1>
+    <h1 className="color">Contact Us📠</h1>
       <p>Have feedback or suggestions? Send us a message.</p>
     <form className="contact-form" onSubmit={Sent}>
       <input type="text" placeholder="Full Name" required name="fullname" value={formData.fullname} onChange={handleChange} />
