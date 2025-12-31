@@ -1,8 +1,5 @@
 import { Link, useNavigate } from "react-router-dom";
 import Carousel from "../components/Carousel";
-import photo from '../assets/p1.jpg'
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
 import { useState,useEffect } from "react";
 import axios from "axios";
 

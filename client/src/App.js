@@ -7,7 +7,6 @@ import About from "./pages/About";
 import Features from "./pages/Features";
 import Contact from "./pages/Contact";
 import Track from "./pages/TrackHealth";
-import Carousel from "./components/Carousel";
 import SignUp from "./auth/SignUp";
 import SignIn from "./auth/SignIn";
 import "./App.css";
