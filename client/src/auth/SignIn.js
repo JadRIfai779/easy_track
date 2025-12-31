@@ -24,7 +24,7 @@ formdata.append('email',user.email)
 formdata.append('password',user.password)
 try{
   console.log('Posted')
-  const response=await axios.post('http://localhost:5000/login',user)
+  const response=await axios.post(`${process.env.REACT_APP_API_URL}/login`,user)
   console.log('Server Response:',response.data)
   if(response.data.id){
 localStorage.setItem("userId",response.data.id)

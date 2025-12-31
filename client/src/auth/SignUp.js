@@ -28,7 +28,7 @@ const handleSignup=async(e)=>{
     try{
       setError("")
         console.log("submitted")
-        const response=await axios.post("http://localhost:5000/signup",user)
+        const response=await axios.post(`${process.env.REACT_APP_API_URL}/signup`,user)
         console.log(response.data) 
         if(response.data.id)  {
             localStorage.setItem("userId",response.data.id)

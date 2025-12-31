@@ -32,7 +32,7 @@ const handleChange = (e) => {
 try{
  console.log("posted")
  console.log(workout)
- await axios.post('http://localhost:5000/workoutlogs',data)
+ await axios.post(`${process.env.REACT_APP_API_URL}/workoutlogs`,data)
  navigate('/home')
 }
 catch(err){

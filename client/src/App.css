@@ -251,14 +251,14 @@ h1 {
 .footer {
   padding: 2rem 5%;
   text-align: center;
-  background: #0e2f41; /* Same base as navbar */
+  background: #0e2f41; 
   color: #9ca3af;
   font-size: 0.85rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.1); /* Subtle separation line */
+  border-top: 1px solid rgba(255, 255, 255, 0.1); 
   display: flex;
   flex-direction: column;
   gap: 12px;
-  margin-top: auto; /* Pushes footer to bottom of page if using Flexbox on parent */
+  margin-top: auto; 
   
 }
 
@@ -276,7 +276,7 @@ h1 {
 }
 
 .footer-links a:hover {
-  color: #38bdf8; /* Same accent color as navbar logo */
+  color: #38bdf8;
 }
 
 .copyright {

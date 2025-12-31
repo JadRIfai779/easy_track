@@ -10,7 +10,7 @@ import axios from "axios";
   const handleDelete = async (id) => {
   if(window.confirm("Are you sure you want to delete this log?")){
     try{
-      await axios.delete(`http://localhost:5000/records/${id}`)
+      await axios.delete(`${process.env.REACT_APP_API_URL}/records/${id}`)
       setLogs(logs.filter((log)=> log.id!==id))
 
     }catch(err){
@@ -34,7 +34,7 @@ import axios from "axios";
     }
     const getLogs=async()=>{
       try{
-        const res=await axios.get(`http://localhost:5000/records/${uid}`)
+        const res=await axios.get(`${process.env.REACT_APP_API_URL}/records/${uid}`)
         setLogs(res.data)
         
       }
@@ -60,7 +60,7 @@ import axios from "axios";
     <p className="welcome-subtitle">Here is your progress at a glance.</p>
   </div>
   <div className="welcome-stats-mini">
-    {/* Optional: Small circles showing quick stats like '3 logs this week' */}
+
   </div>
 </div>
       <section className="maincard">
@@ -83,7 +83,6 @@ import axios from "axios";
          {logs.length > 0 && logs.map((log) => (
           
     <div key={log.id} className="card">
-      {/* Use brackets if the column name has a hyphen */}
 
       <h3>📅 {log['Create-Date']? new Date(log['Create-Date']).toLocaleDateString(): "Today"}</h3> 
       <p><strong>Steps:</strong> {log.Steps}</p>
